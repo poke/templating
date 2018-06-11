@@ -29,10 +29,6 @@ phases:
   parameters:
     agentOs: macOS
     beforeBuild:
-    - script: ./run.sh install-tools
-      displayName: Run install-tools
-    - script: dotnet dev-certs https
-      displayName: Install https dev cert
     - task: NodeTool@0
       displayName: Use Node 8.x
       inputs:
