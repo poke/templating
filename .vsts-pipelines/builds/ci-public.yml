@@ -16,7 +16,7 @@ phases:
   parameters:
     agentOs: Windows
     beforeBuild:
-    - script: ./run.ps1 install-tools
+    - script: run.ps1 install-tools
     - script: dotnet dev-certs https
     - task: NodeTool@0
       displayName: Use Node 8.x
@@ -27,7 +27,7 @@ phases:
   parameters:
     agentOs: macOS
     beforeBuild:
-    - script: ./run.sh install-tools
+    - script: run.sh install-tools
     - script: dotnet dev-certs https
     - task: NodeTool@0
       displayName: Use Node 8.x
@@ -38,7 +38,7 @@ phases:
   parameters:
     agentOs: Linux
     beforeBuild:
-    - script: ./run.sh install-tools
+    - script: run.sh install-tools
     - script: dotnet dev-certs https
     - task: NodeTool@0
       displayName: Use Node 8.x
