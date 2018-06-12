@@ -18,7 +18,7 @@ namespace Templates.Test.Helpers
 
         public static bool HostSupportsBrowserAutomation
             => string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("ASPNETCORE_BROWSER_AUTOMATION_DISABLED")) &&
-               (IsAppVeyor || IsVSTS || OSSupportsEdge());
+               (IsAppVeyor || (IsVSTS && RuntimeInformation.OSDescription.Contains("Microsoft Windows")) || OSSupportsEdge());
 
         private static bool IsAppVeyor
             => Environment.GetEnvironmentVariables().Contains("APPVEYOR");
