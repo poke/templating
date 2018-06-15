@@ -29,7 +29,7 @@ phases:
       displayName: Use Node 8.x
       inputs:
         versionSpec: 8.x
-    - script: ./run.sh install-tools; dotnet dev-certs https --trust
+    - script: ./run.sh install-tools; dotnet-dev-certs https --trust
       displayName: install tools and cert
 
 - template: .vsts-pipelines/templates/phases/default-build.yml@buildtools
