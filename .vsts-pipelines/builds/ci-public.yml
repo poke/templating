@@ -29,14 +29,8 @@ phases:
       displayName: Use Node 8.x
       inputs:
         versionSpec: 8.x
-    - script: brew update
-      displayName: Update brew
-    - script: brew install openssl
-      displayName: Install openssl
-    - script: ./run.sh install-tools
-      displayName: install tools
-    - script: dotnet-dev-certs https
-      displayName: install cert
+    - script: ./run.sh install-tools; dotnet dev-certs https --trust
+      displayName: install tools and cert
 
 - template: .vsts-pipelines/templates/phases/default-build.yml@buildtools
   parameters:
