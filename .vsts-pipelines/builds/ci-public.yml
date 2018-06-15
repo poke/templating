@@ -29,8 +29,7 @@ phases:
       displayName: Use Node 8.x
       inputs:
         versionSpec: 8.x
-    - script: dotnet install tool dotnet-dev-certs -g --version 2.1.0
-    - script: dotnet dev-certs https
+    - script: $(Agent.WorkFolder)/.dotnet/tools/dotnet-dev-certs https
       displayName: install certs
 
 - template: .vsts-pipelines/templates/phases/default-build.yml@buildtools
