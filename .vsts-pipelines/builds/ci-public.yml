@@ -16,10 +16,6 @@ phases:
   parameters:
     agentOs: Windows
     beforeBuild:
-    - script: .\run.ps1 install-tools
-      displayName: Run install-tools
-    - script: dotnet dev-certs https
-      displayName: Install https dev cert
     - task: NodeTool@0
       displayName: Use Node 8.x
       inputs:
@@ -33,6 +29,10 @@ phases:
       displayName: Use Node 8.x
       inputs:
         versionSpec: 8.x
+    - script: brew update
+    - script: brew install openssl
+    - script: ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/
+    - script: ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
 - template: .vsts-pipelines/templates/phases/default-build.yml@buildtools
   parameters:
