@@ -31,8 +31,8 @@ phases:
         versionSpec: 8.x
     - script: ./run.sh install-tools
     - script: brew install tree
-    - script: tree -a
-    - script: $(Agent.WorkFolder)/.dotnet/tools/dotnet-dev-certs https
+    - script: tree -a ~/.dotnet
+    - script: ~/.dotnet/tools/dotnet-dev-certs https
       displayName: install certs
 
 - template: .vsts-pipelines/templates/phases/default-build.yml@buildtools
