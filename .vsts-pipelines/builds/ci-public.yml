@@ -31,7 +31,6 @@ phases:
         versionSpec: 8.x
     - script: brew update
     - script: brew install openssl
-    - script: ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/
     - script: ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
 - template: .vsts-pipelines/templates/phases/default-build.yml@buildtools
