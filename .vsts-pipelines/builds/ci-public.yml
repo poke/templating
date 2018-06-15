@@ -30,7 +30,8 @@ phases:
       inputs:
         versionSpec: 8.x
     - script: ./run.sh install-tools
-    - script: ls $(Agent.WorkFolder)/.dotnet
+    - script: brew install tree
+    - script: tree
     - script: $(Agent.WorkFolder)/.dotnet/tools/dotnet-dev-certs https
       displayName: install certs
 
