@@ -34,7 +34,9 @@ phases:
     - script: brew install openssl
       displayName: Install openssl
     - script: ./run.sh install-tools
-    - script: dotnet dev-certs https
+      displayName: install tools
+    - script: dotnet-dev-certs https
+      displayName: install cert
 
 - template: .vsts-pipelines/templates/phases/default-build.yml@buildtools
   parameters:
