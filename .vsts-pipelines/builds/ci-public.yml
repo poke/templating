@@ -29,6 +29,7 @@ phases:
       displayName: Use Node 8.x
       inputs:
         versionSpec: 8.x
+    - script: ls $(Agent.WorkFolder)/.dotnet
     - script: $(Agent.WorkFolder)/.dotnet/tools/dotnet-dev-certs https
       displayName: install certs
 
