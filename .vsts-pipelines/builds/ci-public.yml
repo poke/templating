@@ -29,7 +29,7 @@ phases:
       displayName: Use Node 8.x
       inputs:
         versionSpec: 8.x
-    - script: ./run.sh install-tools; which dotnet; tree -a ${WOrk}.dotnet
+    - script: ./run.sh install-tools; which dotnet; brew install tree; tree -a $(Build.Repository.LocalPath)/.dotnet
     - script: $(Build.Repository.LocalPath)/.dotnet/tools/dotnet-dev-certs https
       displayName: install certs
 
