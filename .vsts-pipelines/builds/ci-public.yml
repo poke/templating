@@ -31,6 +31,7 @@ phases:
         versionSpec: 8.x
     - script: ./run.sh install-tools
     - script: brew install tree
+    - script: which dotnet
     - script: tree -a ./.dotnet
     - script: ~/.dotnet/tools/dotnet-dev-certs https
       displayName: install certs
